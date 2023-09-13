@@ -1,0 +1,26 @@
+spec:
+  name: demo-curl-localzones-ny
+  region: nyc
+  services:
+  - dockerfile_path: Dockerfile
+    git:
+      branch: main
+      repo_clone_url: https://github.com/mtulio/do-app-demo-curl-localzones.git
+    source_dir: site-ny/
+    name: demo-curl-localzones-ny
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    run_command: "/workdir/curl.sh"
+    envs:
+    - key: APP_HOST_AZ
+      scope: RUN_TIME
+      value: CHANGE_ME
+    - key: APP_HOST_NYC
+      scope: RUN_TIME
+      value: CHANGE_ME
+    - key: APP_HOST_BUE
+      scope: RUN_TIME
+      value: CHANGE_ME
+    - key: IP_HOST_BUE
+      scope: RUN_TIME
+      value: CHANGE_ME

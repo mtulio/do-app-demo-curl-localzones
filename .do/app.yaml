@@ -1,0 +1,24 @@
+name: demo-curl-localzones
+region: nyc
+services:
+- dockerfile_path: Dockerfile
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: mtulio/do-app-demo-curl-localzones
+  name: demo-curl-localzones
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  envs:
+  - key: APP_HOST_AZ
+    scope: RUN_TIME
+    value: CHANGE_ME
+  - key: APP_HOST_NYC
+    scope: RUN_TIME
+    value: CHANGE_ME
+  - key: APP_HOST_BUE
+    scope: RUN_TIME
+    value: CHANGE_ME
+  - key: IP_HOST_BUE
+    scope: RUN_TIME
+    value: CHANGE_ME
